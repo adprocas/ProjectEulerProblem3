@@ -6,8 +6,8 @@ public class ProjectEulerProblem3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Long value = 600851475143L;
-        Long largestPrimeFactor = getLargestPrimeFactor(value);
+        long value = 600851475143L;
+        long largestPrimeFactor = getLargestPrimeFactor(value);
 
         if (largestPrimeFactor > 0) {
             System.out.println("The largest prime factor is: " + largestPrimeFactor);
@@ -21,9 +21,9 @@ public class ProjectEulerProblem3 {
      * @return long
      */
     public static long getLargestPrimeFactor(long number) {
-        Long upperLimit = getFactorUpperLimit(number);
+        long upperLimit = getFactorUpperLimit(number);
 
-        for (Long x = upperLimit; x > 2L; x -= 2L) {
+        for (long x = upperLimit; x > 2L; x -= 2L) {
             if (number % x == 0) {
                 if (isPrime(x)) {
                     return x;
@@ -39,7 +39,7 @@ public class ProjectEulerProblem3 {
      * @return long
      */
     public static long getFactorUpperLimit(long number) {
-        Long limit = (long) Math.sqrt(number);
+        long limit = (long) Math.sqrt(number);
 
         if (limit % 2L == 0L) {
             --limit;
@@ -52,16 +52,16 @@ public class ProjectEulerProblem3 {
      * @param number
      * @return boolean
      */
-    public static boolean isPrime(Long number) {
+    public static boolean isPrime(long number) {
         if (number == 1L || number == 2L || number == 3L) {
             return true;
         } else if (number % 2 == 0L || number % 3 == 0L) {
             return false;
         }
         
-        Long initialCounter = getFactorUpperLimit(number);
+        long initialCounter = getFactorUpperLimit(number);
 
-        for (Long x = 5L; x <= initialCounter; x += 2) {
+        for (long x = 5L; x <= initialCounter; x += 2) {
             if (number % x == 0L) {
                 return false;
             }
