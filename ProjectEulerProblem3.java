@@ -58,14 +58,10 @@ public class ProjectEulerProblem3 {
         } else if (number % 2 == 0L || number % 3 == 0L) {
             return false;
         }
+        
+        Long initialCounter = getFactorUpperLimit(number);
 
-        Long initialCounter = (long) Math.sqrt(number);
-
-        if (initialCounter % 2L == 0L) {
-            --initialCounter;
-        }
-
-        for (Long x = 3L; x <= initialCounter; x += 2) {
+        for (Long x = 5L; x <= initialCounter; x += 2) {
             if (number % x == 0L) {
                 return false;
             }
