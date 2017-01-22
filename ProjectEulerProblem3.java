@@ -58,7 +58,7 @@ public class ProjectEulerProblem3 {
         } else if (number % 2 == 0L || number % 3 == 0L) {
             return false;
         }
-        
+
         long initialCounter = getFactorUpperLimit(number);
 
         for (long x = 5L; x <= initialCounter; x += 2) {
